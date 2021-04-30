@@ -20,8 +20,8 @@ public class Solista extends Musico
 		Optional<Instrumento> instrumento=Optional.ofNullable(getInstrumento());
 		setInstrumento(instrumento.orElse(new Tambor("pom, pom, pom")));
 		
-		Optional<String> sonidoOptional=Optional.ofNullable(getInstrumento().getSonido());
-		sonidoOptional.orElseThrow(()->new Exception());
+		//Optional<String> sonidoOptional=Optional.ofNullable(getInstrumento().getSonido());
+		//sonidoOptional.orElseThrow(()->new Exception());
 		
 		System.out.println(getInstrumento().sonar());
 		

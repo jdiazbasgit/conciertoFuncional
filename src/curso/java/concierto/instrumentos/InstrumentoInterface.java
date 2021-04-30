@@ -2,5 +2,5 @@ package curso.java.concierto.instrumentos;
 
 
 public interface InstrumentoInterface {
-	public String sonar() throws  RuntimeException;
+	public String sonar() throws   Exception;
 }

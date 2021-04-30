@@ -11,7 +11,7 @@ public class ConciertoSolista {
 
 	public static void main(String[] args) {
 
-		Solista solista = new Solista(new Tambor());
+		Solista solista = new Solista(new Tambor("cghfgshfgdhdgfhsdfg"));
 
 		Optional<Musico> solistaOptional = Optional.ofNullable(solista);
 		solista=(Solista) solistaOptional.orElse(new Solista(new Tambor("pom, pom, pom en orElse")));

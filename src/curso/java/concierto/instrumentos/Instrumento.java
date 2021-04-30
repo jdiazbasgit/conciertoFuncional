@@ -1,5 +1,6 @@
 package curso.java.concierto.instrumentos;
 
+import java.util.Optional;
 
 /**
  * 
@@ -30,13 +31,16 @@ public class Instrumento implements InstrumentoInterface, Comparable<Instrumento
 
 	/**
 	 * método que reproduce el sonido del instrumento
+	 * @throws Exception 
 	 * 
 	 * @throws InstrumentoRotoException
 	 */
 	@Override
-	public String sonar()  throws RuntimeException
+	public String sonar()  throws Exception
 	{
-		return getSonido();
+		Optional<String> sonidoOptional=Optional.ofNullable(getSonido());
+		
+		return sonidoOptional.orElseThrow(()->new Exception());
 	}
 
 	
