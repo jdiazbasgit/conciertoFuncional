@@ -11,7 +11,6 @@ public class Solista extends Musico
 {
 
 	@Override
-
 	public void tocar() throws Exception 
 	{
 		System.out.println(getInstrumento().sonar());
@@ -19,8 +18,7 @@ public class Solista extends Musico
 	}
 	
 	@Override
-	@Autowired
-	@Qualifier("tambor")
+	
 	public void setInstrumento(Instrumento instrumento)
 	{
 		// TODO Auto-generated method stub

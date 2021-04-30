@@ -20,7 +20,7 @@ public abstract class Musico implements MusicoInterface
 	
 	private Set<Instrumento> instrumentos;
 	
-	private Connection conexion;
+	
 	
 	/**
 	 * Constructor de un musicon con instrumento asignado
@@ -47,20 +47,7 @@ public abstract class Musico implements MusicoInterface
 	public abstract void tocar() throws Exception ;
 	
 	
-	public void verConexion() {
-		
-		try {
-			PreparedStatement pst= getConexion().prepareStatement("select id from empleados");
-					ResultSet rs= pst.executeQuery();
-			
-			while(rs.next()) {
-				System.err.println(rs.getInt(1));
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 	
 	/**
 	 * devuielve el instrumento del musico
@@ -92,11 +79,6 @@ public abstract class Musico implements MusicoInterface
 	{
 		this.instrumentos = instrumentos;
 	}
-	public Connection getConexion() {
-		return conexion;
-	}
-	public void setConexion(Connection conexion) {
-		this.conexion = conexion;
-	}
+	
 
 }

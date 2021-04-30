@@ -36,6 +36,8 @@ public class Instrumento implements InstrumentoInterface, Comparable<Instrumento
 	 */
 	@Override
 	public String sonar() throws Exception {
+		if(getSonido()==null)
+			throw new Exception();
 		return getSonido();
 	}
 
@@ -71,7 +73,6 @@ public class Instrumento implements InstrumentoInterface, Comparable<Instrumento
 
 	@Override
 	public int compareTo(Instrumento otro) {
-		// TODO Auto-generated method stub
 		return this.getSonido().compareTo(otro.getSonido());
 	}
 
