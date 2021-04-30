@@ -41,11 +41,7 @@ public class Instrumento implements InstrumentoInterface, Comparable<Instrumento
 
 	
 
-	@Override
-	public boolean equals(Object obj) {
-		Instrumento otro = (Instrumento) obj;
-		return this.getSonido().equals(otro.getSonido());
-	}
+	
 
 	@Override
 	public int hashCode() {

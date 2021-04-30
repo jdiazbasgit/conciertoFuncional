@@ -4,6 +4,6 @@ import curso.java.concierto.excepciones.InstrumentoRotoException;
 
 public interface MusicoInterface
 {
-	public void tocar() ;
-	public void verConexion();
+	public void tocar() throws Exception ;
+	
 }

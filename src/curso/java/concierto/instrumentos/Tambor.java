@@ -17,7 +17,7 @@ public class Tambor extends Instrumento
 	}
 
 	@Override
-	@Value("pom, pom, pom")
+	//@Value("pom, pom, pom")
 	public void setSonido(String sonido)
 	{
 		super.setSonido(sonido);

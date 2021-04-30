@@ -11,7 +11,7 @@ import curso.java.concierto.musicos.Solista;
 
 public class ConcietoSolistaInyectado {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		//ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
 		
@@ -19,13 +19,9 @@ public class ConcietoSolistaInyectado {
 		
 		MusicoInterface solista = (MusicoInterface) ctx.getBean("solista");
 
-		try {
+		
 			solista.tocar();
-			solista.verConexion();
-		} catch (Exception e) {
-			System.out.println("Señores se ha roto el instrumento vayan a la taquilla a por su dinero");
-
-		}
+			
 
 	}
 

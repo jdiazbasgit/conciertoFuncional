@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import curso.java.concierto.excepciones.InstrumentoRotoException;
 import curso.java.concierto.instrumentos.Instrumento;
 /**
@@ -17,11 +19,12 @@ import curso.java.concierto.instrumentos.Instrumento;
 public abstract class Musico implements MusicoInterface
 {
 
+@Autowired
 	private Instrumento instrumento;
 	
 	private Set<Instrumento> instrumentos;
 	
-	private Connection conexion;
+	
 	
 	/**
 	 * Constructor de un musicon con instrumento asignado
@@ -42,26 +45,13 @@ public abstract class Musico implements MusicoInterface
 	/**
 	 * hace sonar al instrumento que tiene asociado
 	 * @throws Exception 
-	 * @throws InstrumentoRotoException 
+	 *
 	 */
 	@Override
-	public abstract void tocar()  ;
+	public abstract void tocar() throws Exception  ;
 	
 	
-	public void verConexion() {
-		
-		try {
-			PreparedStatement pst= getConexion().prepareStatement("select id from empleados");
-					ResultSet rs= pst.executeQuery();
-			
-			while(rs.next()) {
-				System.err.println(rs.getInt(1));
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 	
 	/**
 	 * devuielve el instrumento del musico
@@ -93,11 +83,6 @@ public abstract class Musico implements MusicoInterface
 	{
 		this.instrumentos = instrumentos;
 	}
-	public Connection getConexion() {
-		return conexion;
-	}
-	public void setConexion(Connection conexion) {
-		this.conexion = conexion;
-	}
+	
 
 }

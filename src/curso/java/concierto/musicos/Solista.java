@@ -6,10 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import curso.java.concierto.anotaciones.Conectar;
 import curso.java.concierto.anotaciones.Vigilado;
 import curso.java.concierto.instrumentos.Instrumento;
-import curso.java.concierto.instrumentos.Tambor;
 
 @Component
 public class Solista extends Musico
@@ -17,12 +15,11 @@ public class Solista extends Musico
 
 	@Override
 	@Vigilado
-	@Conectar
-	public void tocar() 
+	public void tocar() throws Exception 
 	{
-		Optional<Instrumento> instrumento=Optional.ofNullable(getInstrumento());
-		setInstrumento(instrumento.orElse(new Tambor("pom, pom, pom")));
-		
+		//Optional<Instrumento> instrumento=Optional.ofNullable(getInstrumento());
+		//setInstrumento(instrumento.orElseThrow(()->new Exception()));
+		System.out.println(getInstrumento().sonar());
 		System.out.println(getInstrumento().sonar());
 		
 	}
@@ -39,6 +36,8 @@ public class Solista extends Musico
 		// TODO Auto-generated method stub
 		super.setInstrumento(instrumento);
 	}
+
+	
 	
 	
 
