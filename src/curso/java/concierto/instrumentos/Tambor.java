@@ -13,11 +13,9 @@ public class Tambor extends Instrumento
 	}
 
 	public Tambor() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	@Value("pom, pom, pom")
 	public void setSonido(String sonido)
 	{
 		super.setSonido(sonido);

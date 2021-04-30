@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Set;
 
-import curso.java.concierto.excepciones.InstrumentoRotoException;
 import curso.java.concierto.instrumentos.Instrumento;
 /**
  * 
@@ -45,7 +44,7 @@ public abstract class Musico implements MusicoInterface
 	 * @throws InstrumentoRotoException 
 	 */
 	@Override
-	public abstract void tocar()  ;
+	public abstract void tocar() throws RuntimeException  ;
 	
 	
 	public void verConexion() {

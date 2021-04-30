@@ -1,9 +1,8 @@
 package curso.java.concierto.musicos;
 
-import curso.java.concierto.excepciones.InstrumentoRotoException;
 
 public interface MusicoInterface
 {
-	public void tocar() ;
+	public void tocar() throws  RuntimeException;
 	public void verConexion();
 }

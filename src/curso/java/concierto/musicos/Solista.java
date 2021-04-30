@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import curso.java.concierto.anotaciones.Conectar;
-import curso.java.concierto.anotaciones.Vigilado;
 import curso.java.concierto.instrumentos.Instrumento;
 import curso.java.concierto.instrumentos.Tambor;
 
@@ -16,9 +14,8 @@ public class Solista extends Musico
 {
 
 	@Override
-	@Vigilado
-	@Conectar
-	public void tocar() 
+	
+	public void tocar() throws RuntimeException 
 	{
 		Optional<Instrumento> instrumento=Optional.ofNullable(getInstrumento());
 		setInstrumento(instrumento.orElse(new Tambor("pom, pom, pom")));
@@ -31,6 +28,10 @@ public class Solista extends Musico
 		super(instrumento);
 	}
 	
+	public Solista() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	@Autowired
 	@Qualifier("tambor")

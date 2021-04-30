@@ -1,6 +1,5 @@
 package curso.java.concierto.instrumentos;
 
-import curso.java.concierto.excepciones.InstrumentoRotoException;
 
 /**
  * 
@@ -35,7 +34,8 @@ public class Instrumento implements InstrumentoInterface, Comparable<Instrumento
 	 * @throws InstrumentoRotoException
 	 */
 	@Override
-	public String sonar()  {
+	public String sonar()  throws RuntimeException
+	{
 		return getSonido();
 	}
 

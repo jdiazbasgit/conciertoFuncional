@@ -14,22 +14,22 @@ public class ConciertoSolista {
 		Solista solista = null;
 
 		Optional<Musico> solistaOptional = Optional.ofNullable(solista);
-		solista=(Solista) solistaOptional.orElse(new Solista(new Tambor("pom, pom, pom")));
-		Instrumento tambor = null;
+		solista=(Solista) solistaOptional.orElse(new Solista(/*new Tambor("pom, pom, pom en orElse")*/));
+		Instrumento tambor = solista.getInstrumento();
+		
+		solista.setInstrumento(tambor);
+		
+		
 
 		Optional<Instrumento> tamborOptional = Optional.ofNullable(tambor);
-		tamborOptional.ifPresent((i) -> {
-
-			
-			// i.setSonido("pom, pom, pom");
-
+		Tambor t=(Tambor) tamborOptional.orElseGet(() -> {
+			// arreglo el tambor y se lo doy
+			return new Tambor("pom, pom, pom en orElsegGet");
 		});
 
-		solista.setInstrumento(tamborOptional.orElse(tambor));
-		Optional.ofNullable(solista).ifPresent((s) -> s.tocar());
+		solista.setInstrumento(t);
+		solista.tocar();
 
-		// System.out.println("se ha roto el istrumento");
-		// System.out.println("voy a arreglar el instrumento");
 
 	}
 
