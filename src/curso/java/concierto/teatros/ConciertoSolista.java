@@ -1,12 +1,6 @@
 package curso.java.concierto.teatros;
 
-import java.util.Optional;
-
-import javax.sound.midi.Instrument;
-
-import curso.java.concierto.excepciones.InstrumentoRotoException;
 import curso.java.concierto.instrumentos.Instrumento;
-import curso.java.concierto.instrumentos.Tambor;
 import curso.java.concierto.musicos.Solista;
 
 public class ConciertoSolista {

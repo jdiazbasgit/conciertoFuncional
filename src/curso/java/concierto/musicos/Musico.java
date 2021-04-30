@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Set;
 
-import curso.java.concierto.excepciones.InstrumentoRotoException;
 import curso.java.concierto.instrumentos.Instrumento;
 /**
  * 
