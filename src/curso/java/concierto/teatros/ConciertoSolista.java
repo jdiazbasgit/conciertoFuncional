@@ -14,9 +14,9 @@ public class ConciertoSolista {
 	public static void main(String[] args) {
 		
 		Solista solista= new Solista();
-		Tambor tambor= null;
-		Optional<Instrumento> instrumentoOptional=Optional.ofNullable(tambor);
-		 instrumentoOptional.get().setSonido("pom, pom, pom");
+	
+		Instrumento tambor=new Instrumento();
+		tambor.setSonido("pom, pom, pom");
 		solista.setInstrumento(tambor);
 		try {
 			solista.tocar();

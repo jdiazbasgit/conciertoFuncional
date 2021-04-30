@@ -22,7 +22,7 @@ public class ConcietoSolistaInyectado {
 		try {
 			solista.tocar();
 			solista.verConexion();
-		} catch (InstrumentoRotoException e) {
+		} catch (Exception e) {
 			System.out.println("Señores se ha roto el instrumento vayan a la taquilla a por su dinero");
 
 		}

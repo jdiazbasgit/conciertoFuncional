@@ -24,7 +24,7 @@ public class PropietarioDelTeatro {
 	}
 	
 	@Around("soporte()")
-	public Object trabajar(ProceedingJoinPoint joinpoint) throws InstrumentoRotoException {
+	public Object trabajar(ProceedingJoinPoint joinpoint) throws Exception {
 		
 		Musico musico=(Musico) joinpoint.getTarget();
 		
