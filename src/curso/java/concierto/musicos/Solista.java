@@ -15,10 +15,13 @@ public class Solista extends Musico
 
 	@Override
 	
-	public void tocar() throws RuntimeException 
+	public void tocar() throws Exception 
 	{
 		Optional<Instrumento> instrumento=Optional.ofNullable(getInstrumento());
 		setInstrumento(instrumento.orElse(new Tambor("pom, pom, pom")));
+		
+		Optional<String> sonidoOptional=Optional.ofNullable(getInstrumento().getSonido());
+		sonidoOptional.orElseThrow(()->new Exception());
 		
 		System.out.println(getInstrumento().sonar());
 		

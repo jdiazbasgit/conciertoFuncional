@@ -11,10 +11,10 @@ public class ConciertoSolista {
 
 	public static void main(String[] args) {
 
-		Solista solista = null;
+		Solista solista = new Solista(new Tambor());
 
 		Optional<Musico> solistaOptional = Optional.ofNullable(solista);
-		solista=(Solista) solistaOptional.orElse(new Solista(/*new Tambor("pom, pom, pom en orElse")*/));
+		solista=(Solista) solistaOptional.orElse(new Solista(new Tambor("pom, pom, pom en orElse")));
 		Instrumento tambor = solista.getInstrumento();
 		
 		solista.setInstrumento(tambor);
@@ -28,7 +28,11 @@ public class ConciertoSolista {
 		});
 
 		solista.setInstrumento(t);
-		solista.tocar();
+		try {
+			solista.tocar();
+		} catch (Exception e) {
+			System.out.println("El instrumento se ha roto, el concierto ha terminado");
+		}
 
 
 	}
