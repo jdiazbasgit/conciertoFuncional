@@ -35,9 +35,11 @@ public class Instrumento implements InstrumentoInterface, Comparable<Instrumento
 	 * @throws InstrumentoRotoException
 	 */
 	@Override
-	public String sonar() throws Exception {
+	public String sonar()  {
 		return getSonido();
 	}
+
+	
 
 	@Override
 	public boolean equals(Object obj) {

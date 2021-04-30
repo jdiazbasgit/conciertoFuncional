@@ -2,29 +2,34 @@ package curso.java.concierto.teatros;
 
 import java.util.Optional;
 
-import javax.sound.midi.Instrument;
-
-import curso.java.concierto.excepciones.InstrumentoRotoException;
 import curso.java.concierto.instrumentos.Instrumento;
 import curso.java.concierto.instrumentos.Tambor;
+import curso.java.concierto.musicos.Musico;
 import curso.java.concierto.musicos.Solista;
 
 public class ConciertoSolista {
 
 	public static void main(String[] args) {
-		
-		Solista solista= new Solista();
-	
-		Instrumento tambor=new Instrumento();
-		tambor.setSonido("pom, pom, pom");
-		solista.setInstrumento(tambor);
-		try {
-			solista.tocar();
-		} catch (Exception e) {
-			System.out.println("se ha roto el istrumento");
-			System.out.println("voy a arreglar el instrumento");
+
+		Solista solista = null;
+
+		Optional<Musico> solistaOptional = Optional.ofNullable(solista);
+		solista=(Solista) solistaOptional.orElse(new Solista(new Tambor("pom, pom, pom")));
+		Instrumento tambor = null;
+
+		Optional<Instrumento> tamborOptional = Optional.ofNullable(tambor);
+		tamborOptional.ifPresent((i) -> {
+
 			
-		}
+			// i.setSonido("pom, pom, pom");
+
+		});
+
+		solista.setInstrumento(tamborOptional.orElse(tambor));
+		Optional.ofNullable(solista).ifPresent((s) -> s.tocar());
+
+		// System.out.println("se ha roto el istrumento");
+		// System.out.println("voy a arreglar el instrumento");
 
 	}
 

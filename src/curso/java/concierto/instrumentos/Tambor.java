@@ -8,6 +8,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class Tambor extends Instrumento
 {
+	public Tambor(String string) {
+		super(string);
+	}
+
+	public Tambor() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	@Value("pom, pom, pom")
 	public void setSonido(String sonido)

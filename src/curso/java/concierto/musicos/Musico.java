@@ -45,7 +45,7 @@ public abstract class Musico implements MusicoInterface
 	 * @throws InstrumentoRotoException 
 	 */
 	@Override
-	public abstract void tocar() throws Exception ;
+	public abstract void tocar()  ;
 	
 	
 	public void verConexion() {
